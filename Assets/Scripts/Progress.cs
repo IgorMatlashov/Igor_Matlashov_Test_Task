@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class Progress : MonoBehaviour
 {
-    [SerializeField] private Image progressBar; // The UI Image representing the progress bar
-    [SerializeField] private float totalCapacity; // Total capacity of the cup in cubic units
-    [SerializeField] private float fillSpeed = 1f; // Speed of the progress bar filling animation
+    [SerializeField] private Image progressBar;
+    [SerializeField] private float totalCapacity;
+    [SerializeField] private float fillSpeed = 1f;
 
     private float targetFillAmount;
     private float currentFillAmount;
-    private float occupiedVolume; // Track the total volume of objects in the cup
+    private float occupiedVolume;
 
     public UnityEvent OnBarFull;
 
@@ -28,7 +28,6 @@ public class Progress : MonoBehaviour
 
     private void Start()
     {
-        // Initialize fill amounts
         currentFillAmount = progressBar.fillAmount;
         targetFillAmount = currentFillAmount;
     }
@@ -65,7 +64,6 @@ public class Progress : MonoBehaviour
 
     private float CalculateVolume(Collider collider)
     {
-        // Calculate the volume based on object's bounds
         var renderer = collider.GetComponent<Renderer>();
         return renderer != null ? renderer.bounds.size.x * renderer.bounds.size.y * renderer.bounds.size.z : 0f;
     }
