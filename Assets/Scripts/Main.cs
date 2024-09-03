@@ -40,7 +40,6 @@ public class Main : MonoBehaviour
     {
         _isSpawning = false;
         finishPopUp.SetActive(true);
-        //finishPopUp.GetComponent<Animation>().Play();
     }
 
     private void Awake()
